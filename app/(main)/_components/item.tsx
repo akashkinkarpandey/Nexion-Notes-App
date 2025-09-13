@@ -83,12 +83,12 @@ export const Item = ({
     event.stopPropagation();
     if (!id) return;
     const promise = create({ title: "Untitled", parentDocument: id })
-      .then(async (documentId) => {
+      .then( (documentId) => {
         if (!expanded) {
           onExpand?.();
         }
         console.log("Created documentId:", documentId);
-        await router.push(`/documents/${documentId}`);
+         router.push(`/documents/${documentId}`);
         return documentId;
       })
       .catch((err) => {
@@ -99,7 +99,7 @@ export const Item = ({
     toast.promise(promise, {
       loading: "Creating a new note...",
       success: "New note created!",
-      error: "Failed to create a new note."
+      error: (err) => `Failed to create a new note: ${err.message}`,
     });
     return promise;
 

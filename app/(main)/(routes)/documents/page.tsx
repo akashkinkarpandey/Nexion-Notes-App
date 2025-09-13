@@ -15,21 +15,18 @@ const DocumentsPage = () => {
   const create = useMutation(api.documents.create);
 
   const onCreate = () => {
-    const promise = create({ title: "Untitled" })
-      .then(async (documentId) => {
-        console.log("Created documentId:", documentId);
-        await router.push(`/documents/${documentId}`);
-        return documentId;
-      })
-      .catch((err) => {
-        console.error("Error creating note:", err);
-        throw err; 
-      });
+    const promise = create({ title: "Untitled" }).then((documentId) => {
+      console.log("Created documentId:", documentId);
+      router.push(`/documents/${documentId}`);
+      return documentId;
+    });
+
     toast.promise(promise, {
       loading: "Creating a new note...",
       success: "New note created!",
-      error: "Failed to create a new note."
+      error: (err) => `Failed to create a new note: ${err.message}`,
     });
+
     return promise;
   };
 

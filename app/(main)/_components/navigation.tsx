@@ -109,9 +109,9 @@ export const Navigation = () => {
 
   const handleCreate = () => {
     const promise = create({ title: "Untitled" })
-      .then(async (documentId) => {
+      .then((documentId) => {
         console.log("Created documentId:", documentId);
-        await router.push(`/documents/${documentId}`);
+        router.push(`/documents/${documentId}`);
         return documentId;
       })
       .catch((err) => {
@@ -122,7 +122,7 @@ export const Navigation = () => {
     toast.promise(promise, {
       loading: "Creating a new note...",
       success: "New note created!",
-      error: "Failed to create a new note."
+      error: (err) => `Failed to create a new note: ${err.message}`,
     });
     return promise;
   };
