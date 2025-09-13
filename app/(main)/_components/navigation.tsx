@@ -112,7 +112,7 @@ export const Navigation = () => {
       .then(async (documentId) => {
         console.log("Created documentId:", documentId);
         await router.push(`/documents/${documentId}`);
-        return true;
+        return documentId;
       })
       .catch((err) => {
         console.error("Error creating note:", err);

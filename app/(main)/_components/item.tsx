@@ -89,7 +89,7 @@ export const Item = ({
         }
         console.log("Created documentId:", documentId);
         await router.push(`/documents/${documentId}`);
-        return true;
+        return documentId;
       })
       .catch((err) => {
         console.error("Error creating note:", err);
