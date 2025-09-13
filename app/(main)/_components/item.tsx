@@ -101,6 +101,8 @@ export const Item = ({
       success: "New note created!",
       error: "Failed to create a new note."
     });
+    return promise;
+
   };
 
   const ChevronIcon = expanded ? ChevronDown : ChevronRight;

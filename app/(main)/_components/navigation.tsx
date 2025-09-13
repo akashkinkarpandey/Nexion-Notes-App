@@ -124,6 +124,7 @@ export const Navigation = () => {
       success: "New note created!",
       error: "Failed to create a new note."
     });
+    return promise;
   };
 
   return (
