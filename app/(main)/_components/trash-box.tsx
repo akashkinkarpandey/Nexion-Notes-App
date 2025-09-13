@@ -40,7 +40,7 @@ export const TrashBox = () => {
     toast.promise(promise, {
       loading: "Restoring note...",
       success: "Note restored!",
-      error:" Failed to restore note."
+      //error:" Failed to restore note."
     });
   };
 
@@ -52,7 +52,7 @@ export const TrashBox = () => {
     toast.promise(promise, {
       loading: "Deleting note...",
       success: "Note deleted!",
-      error:" Failed to delete note."
+      //error:" Failed to delete note."
     });
 
     if (params.documentId === documentId) {

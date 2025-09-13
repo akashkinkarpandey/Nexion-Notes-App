@@ -43,7 +43,7 @@ export const Publish = ({
     toast.promise(promise, {
       loading: "Publishing...",
       success: "Note published",
-      error: "Failed to publish note.",
+      // error: "Failed to publish note.",
     });
   };
 
@@ -59,7 +59,7 @@ export const Publish = ({
     toast.promise(promise, {
       loading: "Unpublishing...",
       success: "Note unpublished",
-      error: "Failed to unpublish note.",
+      //error: "Failed to unpublish note.",
     });
   };
 

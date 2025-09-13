@@ -27,7 +27,7 @@ export const Banner = ({
     toast.promise(promise, {
       loading: "Deleting note...",
       success: "Note deleted!",
-      error: "Failed to delete note."
+      //error: "Failed to delete note."
     });
 
     router.push("/documents");
@@ -39,7 +39,7 @@ export const Banner = ({
     toast.promise(promise, {
       loading: "Restoring note...",
       success: "Note restored!",
-      error: "Failed to restore note."
+      //error: "Failed to restore note."
     });
   };
 
