@@ -88,6 +88,7 @@ export const Item = ({
           onExpand?.();
         }
         router.push(`/documents/${documentId}`);
+        return true;
       });
 
     toast.promise(promise, {
