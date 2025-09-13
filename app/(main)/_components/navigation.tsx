@@ -109,8 +109,15 @@ export const Navigation = () => {
 
   const handleCreate = () => {
     const promise = create({ title: "Untitled" })
-      .then((documentId) => {router.push(`/documents/${documentId}`)
-        return true;})
+      .then(async (documentId) => {
+        console.log("Created documentId:", documentId);
+        await router.push(`/documents/${documentId}`);
+        return true;
+      })
+      .catch((err) => {
+        console.error("Error creating note:", err);
+        throw err;
+      });
 
     toast.promise(promise, {
       loading: "Creating a new note...",
